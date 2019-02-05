@@ -7,3 +7,8 @@ Resources:
 * [30 Day Vanilla JS Challenge](https://github.com/wesbos/JavaScript30)
 * [Pexels](https://www.pexels.com/royalty-free-images/)
 * [SoundPacks](https://soundpacks.com/)
+
+
+Screenshots:
+![Drum Kit](https://github.com/gewashington/drum-kit-and-guitar-sounds/blob/master/drum-kit-screenshot.png "Drum https://github.com/gewashington/drum-kit-and-guitar-sounds/blob/master/guitar-sounds-screenshot.pnghttps://github.com/gewashington/drum-kit-and-guitar-sounds/blob/master/drum-kit-screenshot.png "Guitar Sounds")
+

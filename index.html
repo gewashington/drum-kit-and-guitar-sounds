@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="./guitar.html">To Guitar Sounds</a>
+  <!–– Each key on the keyboard has a keyCode (Can check on keyCode.info––>
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <!–– Data-key is a data attribute and here is being used to connect the key by keyCode with the sound ––>
+  <audio data-key="83" src="sounds/hihat.wav"></audio>
+  <audio data-key="68" src="sounds/kick.wav"></audio>
+  <audio data-key="70" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" src="sounds/boom.wav"></audio>
+  <audio data-key="72" src="sounds/ride.wav"></audio>
+  <audio data-key="74" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="76" src="sounds/tink.wav"></audio>
+
+<script>
+    //Listen for event from window by event listener
+    //In this case, we want to listen to the keydown even where a key is pressed
+    //keyCode is one of the events logged during a keyboard event
+
+    function playSound(event) {
+        const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`); //A querySelector just returns the first element that matches a css selector
+        const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
+        if(!audio) return;
+        audio.currentTime = 0; //this rewinds it to start of audio as it takes the audio a few seconds to finish playing and audio.play() only works when nothing is playing
+        audio.play();
+        key.classList.add('playing') //classList gives the class names of the element and allows to add, remove or toggle classes on/to them
+
+        //If you use a timeout in css and javascript, they tend to go out of sync
+    }
+
+    function removeTransition(event) {
+        console.log('Remove transition event', event);
+        if (event.propertyName !== 'transform') return;
+        this.classList.remove('playing')  //in this case, 'this' is whatever got called
+    }
+    const keys = document.querySelectorAll('.key');
+    //You cannot event listen on every element in an array so its best to loop through them 
+    keys.forEach(key =>  key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSound);
+</script>
+
+</body>
+</html>

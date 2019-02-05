@@ -13,5 +13,5 @@ Screenshots:
 ![alt text](https://github.com/gewashington/drum-kit-and-guitar-sounds/blob/master/drum-kit-screenshot.png "Drum Kit") 
 
 
-![alt text](https://github.com/gewashington/drum-kit-and-guitar-sounds/blob/master/guitar-sounds-screenshot.pnghttps://github.com/gewashington/drum-kit-and-guitar-sounds/blob/master/drum-kit-screenshot.png "Guitar Sounds")
+![alt text](https://github.com/gewashington/drum-kit-and-guitar-sounds/blob/master/guitar-sounds-screenshot.png "Guitar Sounds")
 
